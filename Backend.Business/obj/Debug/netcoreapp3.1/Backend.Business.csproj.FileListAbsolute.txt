@@ -1,0 +1,16 @@
+C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Business\bin\Debug\netcoreapp3.1\Backend.Business.deps.json
+C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Business\bin\Debug\netcoreapp3.1\Backend.Business.dll
+C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Business\bin\Debug\netcoreapp3.1\Backend.Business.pdb
+C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Business\obj\Debug\netcoreapp3.1\Backend.Business.csproj.AssemblyReference.cache
+C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Business\obj\Debug\netcoreapp3.1\Backend.Business.AssemblyInfoInputs.cache
+C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Business\obj\Debug\netcoreapp3.1\Backend.Business.AssemblyInfo.cs
+C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Business\obj\Debug\netcoreapp3.1\Backend.Business.csproj.CoreCompileInputs.cache
+C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Business\obj\Debug\netcoreapp3.1\Backend.Business.dll
+C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Business\obj\Debug\netcoreapp3.1\Backend.Business.pdb
+C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Business\bin\Debug\netcoreapp3.1\Backend.Context.dll
+C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Business\bin\Debug\netcoreapp3.1\Backend.Entities.dll
+C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Business\bin\Debug\netcoreapp3.1\Common.Core.dll
+C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Business\bin\Debug\netcoreapp3.1\Backend.Context.pdb
+C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Business\bin\Debug\netcoreapp3.1\Backend.Entities.pdb
+C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Business\bin\Debug\netcoreapp3.1\Common.Core.pdb
+C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Business\obj\Debug\netcoreapp3.1\Backend.Business.csproj.CopyComplete

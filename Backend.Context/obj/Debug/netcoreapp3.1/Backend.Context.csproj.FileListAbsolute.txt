@@ -1,0 +1,14 @@
+C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Context\bin\Debug\netcoreapp3.1\Backend.Context.deps.json
+C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Context\bin\Debug\netcoreapp3.1\Backend.Context.dll
+C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Context\bin\Debug\netcoreapp3.1\Backend.Context.pdb
+C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Context\obj\Debug\netcoreapp3.1\Backend.Context.csproj.AssemblyReference.cache
+C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Context\obj\Debug\netcoreapp3.1\Backend.Context.AssemblyInfoInputs.cache
+C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Context\obj\Debug\netcoreapp3.1\Backend.Context.AssemblyInfo.cs
+C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Context\obj\Debug\netcoreapp3.1\Backend.Context.csproj.CoreCompileInputs.cache
+C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Context\obj\Debug\netcoreapp3.1\Backend.Context.dll
+C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Context\obj\Debug\netcoreapp3.1\Backend.Context.pdb
+C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Context\bin\Debug\netcoreapp3.1\Backend.Entities.dll
+C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Context\bin\Debug\netcoreapp3.1\Common.Core.dll
+C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Context\bin\Debug\netcoreapp3.1\Backend.Entities.pdb
+C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Context\bin\Debug\netcoreapp3.1\Common.Core.pdb
+C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Context\obj\Debug\netcoreapp3.1\Backend.Context.csproj.CopyComplete

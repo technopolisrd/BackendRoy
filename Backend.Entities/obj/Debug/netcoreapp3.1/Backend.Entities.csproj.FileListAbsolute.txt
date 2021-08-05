@@ -1,0 +1,12 @@
+C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Entities\bin\Debug\netcoreapp3.1\Backend.Entities.deps.json
+C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Entities\bin\Debug\netcoreapp3.1\Backend.Entities.dll
+C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Entities\bin\Debug\netcoreapp3.1\Backend.Entities.pdb
+C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Entities\obj\Debug\netcoreapp3.1\Backend.Entities.AssemblyInfoInputs.cache
+C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Entities\obj\Debug\netcoreapp3.1\Backend.Entities.AssemblyInfo.cs
+C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Entities\obj\Debug\netcoreapp3.1\Backend.Entities.csproj.CoreCompileInputs.cache
+C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Entities\obj\Debug\netcoreapp3.1\Backend.Entities.dll
+C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Entities\obj\Debug\netcoreapp3.1\Backend.Entities.pdb
+C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Entities\bin\Debug\netcoreapp3.1\Common.Core.dll
+C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Entities\bin\Debug\netcoreapp3.1\Common.Core.pdb
+C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Entities\obj\Debug\netcoreapp3.1\Backend.Entities.csproj.AssemblyReference.cache
+C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Entities\obj\Debug\netcoreapp3.1\Backend.Entities.csproj.CopyComplete
