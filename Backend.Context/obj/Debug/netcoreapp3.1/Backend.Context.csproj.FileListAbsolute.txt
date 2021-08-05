@@ -12,3 +12,6 @@ C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Context\bin\Debug\netcoreap
 C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Context\bin\Debug\netcoreapp3.1\Backend.Entities.pdb
 C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Context\bin\Debug\netcoreapp3.1\Common.Core.pdb
 C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Context\obj\Debug\netcoreapp3.1\Backend.Context.csproj.CopyComplete
+C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Context\bin\Debug\netcoreapp3.1\Backend.Context.runtimeconfig.json
+C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Context\bin\Debug\netcoreapp3.1\Backend.Context.runtimeconfig.dev.json
+C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Context\obj\Debug\netcoreapp3.1\Backend.Context.genruntimeconfig.cache
