@@ -61,6 +61,9 @@ namespace BackendRestApi
                 case "MySql":
                     services.AddDbContextPool<BackendContext>(options => options.UseMySQL(Configuration.GetConnectionString("ConexionMySql")));
                     break;
+                case "SqlLite":
+                    services.AddDbContext<SecurityContext>(options => options.UseSqlite(Configuration.GetConnectionString("ConexionSqlLite")));
+                    break;
             }
 
             services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.IgnoreNullValues = true);
