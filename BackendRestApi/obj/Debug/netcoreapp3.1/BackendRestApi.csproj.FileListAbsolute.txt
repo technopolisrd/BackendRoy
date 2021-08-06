@@ -211,3 +211,8 @@ C:\Users\rmorillo\Documents\Repos\BackendRoy\BackendRestApi\bin\Debug\netcoreapp
 C:\Users\rmorillo\Documents\Repos\BackendRoy\BackendRestApi\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\rmorillo\Documents\Repos\BackendRoy\BackendRestApi\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\Users\rmorillo\Documents\Repos\BackendRoy\BackendRestApi\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\rmorillo\Documents\Repos\BackendRoy\BackendRestApi\bin\Debug\netcoreapp3.1\AutoMapper.dll
+C:\Users\rmorillo\Documents\Repos\BackendRoy\BackendRestApi\bin\Debug\netcoreapp3.1\BCrypt.Net-Next.dll
+C:\Users\rmorillo\Documents\Repos\BackendRoy\BackendRestApi\bin\Debug\netcoreapp3.1\MailKit.dll
+C:\Users\rmorillo\Documents\Repos\BackendRoy\BackendRestApi\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\rmorillo\Documents\Repos\BackendRoy\BackendRestApi\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
