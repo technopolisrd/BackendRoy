@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using Microsoft.Extensions.Configuration;
 
 namespace BackendRestApi.Controllers
 {
@@ -16,13 +17,16 @@ namespace BackendRestApi.Controllers
     {
         private readonly IAccountService _accountService;
         private readonly IMapper _mapper;
+        public IConfiguration Configuration { get; }
 
         public AccountsController(
             IAccountService accountService,
-            IMapper mapper)
+            IMapper mapper,
+            IConfiguration configuration)
         {
             _accountService = accountService;
             _mapper = mapper;
+            Configuration = configuration;
         }
 
         [HttpPost("authenticate")]
@@ -158,7 +162,7 @@ namespace BackendRestApi.Controllers
             var cookieOptions = new CookieOptions
             {
                 HttpOnly = true,
-                Expires = DateTime.UtcNow.AddDays(7)
+                Expires = DateTime.UtcNow.AddSeconds(double.Parse(Configuration.GetConnectionString("RefreshTokenTimeOutInSeconds").ToString()))
             };
             Response.Cookies.Append("refreshToken", token, cookieOptions);
         }
