@@ -15,6 +15,7 @@ using BackendRestApi.Services.Contracts;
 using Backend.Context.Data.Security;
 using Backend.Entities.SecurityAccounts;
 using Backend.Entities.SecurityAccounts.Enums;
+using Microsoft.Extensions.Configuration;
 
 namespace BackendRestApi.Services.Services
 {
@@ -25,16 +26,22 @@ namespace BackendRestApi.Services.Services
         private readonly AppSettings _appSettings;
         private readonly IEmailService _emailService;
 
+        public IConfiguration Configuration { get; }
+
+
+
         public AccountService(
             SecurityContext context,
             IMapper mapper,
             IOptions<AppSettings> appSettings,
-            IEmailService emailService)
+            IEmailService emailService,
+            IConfiguration configuration)
         {
             _context = context;
             _mapper = mapper;
             _appSettings = appSettings.Value;
             _emailService = emailService;
+            Configuration = configuration;
         }
 
         public AuthenticateResponse Authenticate(AuthenticateRequest model, string ipAddress)
@@ -274,7 +281,7 @@ namespace BackendRestApi.Services.Services
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(new[] { new Claim("id", account.Id.ToString()) }),
-                Expires = DateTime.UtcNow.AddMinutes(15),
+                Expires = DateTime.UtcNow.AddSeconds(double.Parse(Configuration.GetConnectionString("TokenTimeOutInSeconds").ToString())),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
             var token = tokenHandler.CreateToken(tokenDescriptor);
@@ -286,7 +293,7 @@ namespace BackendRestApi.Services.Services
             return new RefreshToken
             {
                 Token = randomTokenString(),
-                Expires = DateTime.UtcNow.AddDays(7),
+                Expires = DateTime.UtcNow.AddSeconds(double.Parse(Configuration.GetConnectionString("RefreshTokenTimeOutInSeconds").ToString())),
                 Created = DateTime.UtcNow,
                 CreatedByIp = ipAddress
             };
