@@ -281,7 +281,7 @@ namespace BackendRestApi.Services.Services
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(new[] { new Claim("id", account.Id.ToString()) }),
-                Expires = DateTime.UtcNow.AddSeconds(double.Parse(Configuration.GetConnectionString("TokenTimeOutInSeconds").ToString())),
+                Expires = DateTime.UtcNow.AddSeconds(Configuration.GetValue<double>("TokenTimeOutInSeconds")),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
             var token = tokenHandler.CreateToken(tokenDescriptor);
@@ -293,7 +293,7 @@ namespace BackendRestApi.Services.Services
             return new RefreshToken
             {
                 Token = randomTokenString(),
-                Expires = DateTime.UtcNow.AddSeconds(double.Parse(Configuration.GetConnectionString("RefreshTokenTimeOutInSeconds").ToString())),
+                Expires = DateTime.UtcNow.AddSeconds(Configuration.GetValue<double>("RefreshTokenTimeOutInSeconds")),
                 Created = DateTime.UtcNow,
                 CreatedByIp = ipAddress
             };
