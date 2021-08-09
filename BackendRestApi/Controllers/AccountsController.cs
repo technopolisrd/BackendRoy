@@ -162,7 +162,7 @@ namespace BackendRestApi.Controllers
             var cookieOptions = new CookieOptions
             {
                 HttpOnly = true,
-                Expires = DateTime.UtcNow.AddSeconds(double.Parse(Configuration.GetConnectionString("RefreshTokenTimeOutInSeconds").ToString()))
+                Expires = DateTime.UtcNow.AddSeconds(604800)
             };
             Response.Cookies.Append("refreshToken", token, cookieOptions);
         }
