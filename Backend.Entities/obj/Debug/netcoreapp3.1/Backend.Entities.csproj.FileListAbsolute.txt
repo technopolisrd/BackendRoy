@@ -10,3 +10,4 @@ C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Entities\bin\Debug\netcorea
 C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Entities\bin\Debug\netcoreapp3.1\Common.Core.pdb
 C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Entities\obj\Debug\netcoreapp3.1\Backend.Entities.csproj.AssemblyReference.cache
 C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Entities\obj\Debug\netcoreapp3.1\Backend.Entities.csproj.CopyComplete
+C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Entities\obj\Debug\netcoreapp3.1\Backend.Entities.GeneratedMSBuildEditorConfig.editorconfig

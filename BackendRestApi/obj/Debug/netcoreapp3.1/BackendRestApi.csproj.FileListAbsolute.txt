@@ -216,3 +216,4 @@ C:\Users\rmorillo\Documents\Repos\BackendRoy\BackendRestApi\bin\Debug\netcoreapp
 C:\Users\rmorillo\Documents\Repos\BackendRoy\BackendRestApi\bin\Debug\netcoreapp3.1\MailKit.dll
 C:\Users\rmorillo\Documents\Repos\BackendRoy\BackendRestApi\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\rmorillo\Documents\Repos\BackendRoy\BackendRestApi\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\rmorillo\Documents\Repos\BackendRoy\BackendRestApi\obj\Debug\netcoreapp3.1\BackendRestApi.GeneratedMSBuildEditorConfig.editorconfig

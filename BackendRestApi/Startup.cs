@@ -18,6 +18,10 @@ using BackendRestApi.Middleware;
 using AutoMapper;
 using System;
 using Microsoft.AspNetCore.Http;
+using Backend.Repository.Sample.Contracts;
+using Backend.Repository.Sample.Repository;
+using Backend.Repository.Sample.Services.Contracts;
+using Backend.Repository.Sample.Services;
 
 namespace BackendRestApi
 {
@@ -89,6 +93,12 @@ namespace BackendRestApi
             // configure DI for application services
             services.AddScoped<IAccountService, AccountService>();
             services.AddScoped<IEmailService, EmailService>();
+
+            // Repositories
+            services.AddScoped<iCustomerRepository, CustomerRepository>();
+
+            // Services
+            services.AddScoped<iCustomerService, CustomerService>();
 
         }
 

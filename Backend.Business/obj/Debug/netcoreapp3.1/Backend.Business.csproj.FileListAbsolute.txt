@@ -14,3 +14,4 @@ C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Business\bin\Debug\netcorea
 C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Business\bin\Debug\netcoreapp3.1\Backend.Entities.pdb
 C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Business\bin\Debug\netcoreapp3.1\Common.Core.pdb
 C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Business\obj\Debug\netcoreapp3.1\Backend.Business.csproj.CopyComplete
+C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Business\obj\Debug\netcoreapp3.1\Backend.Business.GeneratedMSBuildEditorConfig.editorconfig

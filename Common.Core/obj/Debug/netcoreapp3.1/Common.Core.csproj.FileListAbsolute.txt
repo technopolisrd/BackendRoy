@@ -25,3 +25,4 @@ C:\Users\rmorillo\Documents\Repos\BackendRoy\Common.Core\obj\Debug\netcoreapp3.1
 C:\Users\rmorillo\Documents\Repos\BackendRoy\Common.Core\obj\Debug\netcoreapp3.1\Common.Core.csproj.CoreCompileInputs.cache
 C:\Users\rmorillo\Documents\Repos\BackendRoy\Common.Core\obj\Debug\netcoreapp3.1\Common.Core.dll
 C:\Users\rmorillo\Documents\Repos\BackendRoy\Common.Core\obj\Debug\netcoreapp3.1\Common.Core.pdb
+C:\Users\rmorillo\Documents\Repos\BackendRoy\Common.Core\obj\Debug\netcoreapp3.1\Common.Core.GeneratedMSBuildEditorConfig.editorconfig

@@ -15,3 +15,4 @@ C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Context\obj\Debug\netcoreap
 C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Context\bin\Debug\netcoreapp3.1\Backend.Context.runtimeconfig.json
 C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Context\bin\Debug\netcoreapp3.1\Backend.Context.runtimeconfig.dev.json
 C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Context\obj\Debug\netcoreapp3.1\Backend.Context.genruntimeconfig.cache
+C:\Users\rmorillo\Documents\Repos\BackendRoy\Backend.Context\obj\Debug\netcoreapp3.1\Backend.Context.GeneratedMSBuildEditorConfig.editorconfig
