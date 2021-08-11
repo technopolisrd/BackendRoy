@@ -38,9 +38,9 @@ namespace BackendRestApi.Controllers
         }
 
         [HttpPost("refresh-token")]
-        public ActionResult<AuthenticateResponse> RefreshToken()
+        public ActionResult<AuthenticateResponse> RefreshToken(RequestRefreshToken refTok)
         {
-            var refreshToken = Request.Cookies["refreshToken"];
+            var refreshToken = refTok.rToken; //Request.Cookies["refreshToken"];
             var response = _accountService.RefreshToken(refreshToken, ipAddress());
             setTokenCookie(response.RefreshToken);
             return Ok(response);
@@ -162,9 +162,11 @@ namespace BackendRestApi.Controllers
             var cookieOptions = new CookieOptions
             {
                 HttpOnly = true,
-                Expires = DateTime.UtcNow.AddSeconds(604800)
+                Expires = DateTime.UtcNow.AddDays(7),
+                IsEssential = true                
             };
-            Response.Cookies.Append("refreshToken", token, cookieOptions);
+            Response.Cookies.Append("refreshToken", "35376924DC09702E509F697179A9A358DCA1D3C483665D3A9AE649F8E6FC7841FC942F23EE5C67A9", cookieOptions);
+            //Response.Cookies.Append("refreshToken", token, cookieOptions);
         }
 
         private string ipAddress()

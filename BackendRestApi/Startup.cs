@@ -17,6 +17,7 @@ using BackendRestApi.Services.Services;
 using BackendRestApi.Middleware;
 using AutoMapper;
 using System;
+using Microsoft.AspNetCore.Http;
 
 namespace BackendRestApi
 {
@@ -68,7 +69,6 @@ namespace BackendRestApi
 
             services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.IgnoreNullValues = true);
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-
 
             // Register the swagger generator and define a Swagger document
             // for Northwind service

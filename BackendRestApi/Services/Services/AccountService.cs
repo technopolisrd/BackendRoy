@@ -71,27 +71,49 @@ namespace BackendRestApi.Services.Services
 
         public AuthenticateResponse RefreshToken(string token, string ipAddress)
         {
-            var (refreshToken, account) = getRefreshToken(token);
+            if (token != null)
+            {
+                var (refreshToken, account) = getRefreshToken(token);
 
-            // replace old refresh token with a new one and save
-            var newRefreshToken = generateRefreshToken(ipAddress);
-            refreshToken.Revoked = DateTime.UtcNow;
-            refreshToken.RevokedByIp = ipAddress;
-            refreshToken.ReplacedByToken = newRefreshToken.Token;
-            account.RefreshTokens.Add(newRefreshToken);
+                // replace old refresh token with a new one and save
+                var newRefreshToken = generateRefreshToken(ipAddress);
+                refreshToken.Revoked = DateTime.UtcNow;
+                refreshToken.RevokedByIp = ipAddress;
+                refreshToken.ReplacedByToken = newRefreshToken.Token;
+                account.RefreshTokens.Add(newRefreshToken);
 
-            removeOldRefreshTokens(account);
+                removeOldRefreshTokens(account);
 
-            _context.Update(account);
-            _context.SaveChanges();
+                _context.Update(account);
+                _context.SaveChanges();
 
-            // generate new jwt
-            var jwtToken = generateJwtToken(account);
+                // generate new jwt
+                var jwtToken = generateJwtToken(account);
 
-            var response = _mapper.Map<AuthenticateResponse>(account);
-            response.JwtToken = jwtToken;
-            response.RefreshToken = newRefreshToken.Token;
-            return response;
+                var response = _mapper.Map<AuthenticateResponse>(account);
+                response.JwtToken = jwtToken;
+                response.RefreshToken = newRefreshToken.Token;
+                return response;
+            }
+            else
+            {
+                AuthenticateResponse authResponse = new AuthenticateResponse();
+
+                authResponse.Id = 0;
+                authResponse.Title = "";
+                authResponse.FirstName = "";
+                authResponse.LastName = "";
+                authResponse.Email = "";
+                authResponse.Role = "";
+                authResponse.Created = DateTime.Now;
+                authResponse.Updated = DateTime.Now;
+                authResponse.IsVerified = false;
+                authResponse.JwtToken = "";
+                authResponse.RefreshToken = "";
+
+                return authResponse;
+            }
+
         }
 
         public void RevokeToken(string token, string ipAddress)
