@@ -19,7 +19,7 @@ namespace Backend.Repository.Sample.Services
             _repo = repo;
         }
 
-        public async Task<long> AddAsync(CustomerDTO entity, string user)
+        public async Task<CustomerDTO> AddAsync(CustomerDTO entity, string user)
         {
             Customer table = new Customer();
 
@@ -37,15 +37,17 @@ namespace Backend.Repository.Sample.Services
             }
             catch (Exception)
             {
-                return 0;
+                return null;
             }
 
             if (result == null)
             {
-                return 0;
+                return null;
             }
 
-            return result.Id;
+            entity.Id = result.Id;
+
+            return entity;
         }
 
         public bool ExistOrUsed(long? id)

@@ -51,7 +51,6 @@ namespace BackendRestApi.Controllers
 
         [HttpGet("GetCustomersBySearch/{searchString}", Name = nameof(GetCustomersBySearch))]
         [ProducesResponseType(200, Type = typeof(ResponseDTO<List<CustomerDTO>>))]
-        [ProducesResponseType(404, Type = typeof(ResponseDTO<string>))]
         public async Task<IActionResult> GetCustomersBySearch(string searchString)
         {
             ResponseDTO<List<CustomerDTO>> respuesta = new ResponseDTO<List<CustomerDTO>>();
@@ -71,23 +70,25 @@ namespace BackendRestApi.Controllers
             respuesta.message = "Data not found.";
             respuesta.data = null;
 
-            return NotFound(respuesta);
+            return Ok(respuesta);
         }
 
         [HttpGet("GetCustomerById/{id}", Name = nameof(GetCustomerById))]
-        [ProducesResponseType(200, Type = typeof(ResponseDTO<CustomerDTO>))]
-        [ProducesResponseType(404, Type = typeof(ResponseDTO<string>))]
+        [ProducesResponseType(200, Type = typeof(ResponseDTO<List<CustomerDTO>>))]
         public async Task<IActionResult> GetCustomerById(long id)
         {
-            ResponseDTO<CustomerDTO> respuesta = new ResponseDTO<CustomerDTO>();
+            ResponseDTO<List<CustomerDTO>> respuesta = new ResponseDTO<List<CustomerDTO>>();
 
-            var result = await serv.GetDataById(id);
+            CustomerDTO result = await serv.GetDataById(id);
+            List<CustomerDTO> resultList = new List<CustomerDTO>();
+
+            resultList.Add(result);
 
             if (result != null)
             {
                 respuesta.status = "200";
                 respuesta.message = "Data loaded successfully.";
-                respuesta.data = result;
+                respuesta.data = resultList;
 
                 return Ok(respuesta);
             }
@@ -96,61 +97,60 @@ namespace BackendRestApi.Controllers
             respuesta.message = "Data not found.";
             respuesta.data = null;
 
-            return NotFound(respuesta);
+            return Ok(respuesta);
         }
 
         [HttpPost("CreateCustomer/{user}", Name = nameof(CreateCustomer))]
-        [ProducesResponseType(201, Type = typeof(ResponseDTO<long>))]
-        [ProducesResponseType(400, Type = typeof(ResponseDTO<long>))]
-        [ProducesResponseType(404, Type = typeof(ResponseDTO<long>))]
+        [ProducesResponseType(201, Type = typeof(ResponseDTO<List<CustomerDTO>>))]
         public async Task<IActionResult> CreateCustomer([FromBody] CustomerDTO customer, string user)
         {
-            ResponseDTO<long> respuesta = new ResponseDTO<long>();
+            ResponseDTO<List<CustomerDTO>> respuesta = new ResponseDTO<List<CustomerDTO>>();
 
             if (customer == null || string.IsNullOrWhiteSpace(user))
             {
                 respuesta.status = "400";
                 respuesta.message = "Bad request, one of the parameters is missing.";
-                respuesta.data = 0;
+                respuesta.data = null;
 
-                return BadRequest(respuesta);
+                return Ok(respuesta);
             }
 
             if (!ModelState.IsValid)
             {
                 respuesta.status = "400";
                 respuesta.message = "Invalid data model.";
-                respuesta.data = 0;
+                respuesta.data = null;
 
-                return BadRequest(respuesta);
+                return Ok(respuesta);
             }
 
-            long added = await serv.AddAsync(customer, user);
+            CustomerDTO added = await serv.AddAsync(customer, user);
+            List<CustomerDTO> addedList = new List<CustomerDTO>();
 
-            if (added != 0)
+            addedList.Add(added);
+
+            if (added != null)
             {
                 respuesta.status = "201";
                 respuesta.message = "Data saved successfully.";
-                respuesta.data = added;
+                respuesta.data = addedList;
 
                 return Ok(respuesta);
             }
 
             respuesta.status = "404";
             respuesta.message = "Data not saved.";
-            respuesta.data = 0;
+            respuesta.data = null;
 
-            return NotFound(respuesta);
+            return Ok(respuesta);
 
         }
 
         [HttpPut("UpdateCustomer/{user}", Name = nameof(UpdateCustomer))]
-        [ProducesResponseType(204, Type = typeof(ResponseDTO<CustomerDTO>))]
-        [ProducesResponseType(400, Type = typeof(ResponseDTO<string>))]
-        [ProducesResponseType(404, Type = typeof(ResponseDTO<string>))]
+        [ProducesResponseType(204, Type = typeof(ResponseDTO<List<CustomerDTO>>))]
         public async Task<IActionResult> UpdateCustomer([FromBody] CustomerDTO customer, string user)
         {
-            ResponseDTO<CustomerDTO> respuesta = new ResponseDTO<CustomerDTO>();
+            ResponseDTO<List<CustomerDTO>> respuesta = new ResponseDTO<List<CustomerDTO>>();
 
             if (customer == null || customer.Id == 0 || string.IsNullOrWhiteSpace(user))
             {
@@ -158,7 +158,7 @@ namespace BackendRestApi.Controllers
                 respuesta.message = "Bad Request.";
                 respuesta.data = null;
 
-                return BadRequest(respuesta);
+                return Ok(respuesta);
             }
 
             if (!ModelState.IsValid)
@@ -167,10 +167,13 @@ namespace BackendRestApi.Controllers
                 respuesta.message = "Invalid data model.";
                 respuesta.data = null;
 
-                return BadRequest(respuesta);
+                return Ok(respuesta);
             }
 
-            var result = await serv.UpdateAsync(customer, user);
+            CustomerDTO result = await serv.UpdateAsync(customer, user);
+            List<CustomerDTO> resultList = new List<CustomerDTO>();
+
+            resultList.Add(result);
 
             if (result != null)
             {
@@ -180,12 +183,12 @@ namespace BackendRestApi.Controllers
                     respuesta.message = "Record not found.";
                     respuesta.data = null;
 
-                    return NotFound(respuesta);
+                    return Ok(respuesta);
                 }
 
                 respuesta.status = "204";
                 respuesta.message = "Data saved successfully.";
-                respuesta.data = result;
+                respuesta.data = resultList;
 
                 return Ok(respuesta);
             }
@@ -199,12 +202,10 @@ namespace BackendRestApi.Controllers
         }
 
         [HttpDelete("DeleteCustomer/{id}", Name = nameof(DeleteCustomer))]
-        [ProducesResponseType(204, Type = typeof(ResponseDTO<CustomerDTO>))]
-        [ProducesResponseType(400, Type = typeof(ResponseDTO<string>))]
-        [ProducesResponseType(404, Type = typeof(ResponseDTO<string>))]
+        [ProducesResponseType(204, Type = typeof(ResponseDTO<List<CustomerDTO>>))]
         public async Task<IActionResult> DeleteCustomer(long id, string user)
         {
-            ResponseDTO<CustomerDTO> respuesta = new ResponseDTO<CustomerDTO>();
+            ResponseDTO<List<CustomerDTO>> respuesta = new ResponseDTO<List<CustomerDTO>>();
 
             if (id <= 0 || string.IsNullOrWhiteSpace(user))
             {
@@ -212,10 +213,13 @@ namespace BackendRestApi.Controllers
                 respuesta.message = "Bad Request.";
                 respuesta.data = null;
 
-                return BadRequest(respuesta);
+                return Ok(respuesta);
             }
 
-            var result = await serv.RemoveAsync(id, user);
+            CustomerDTO result = await serv.RemoveAsync(id, user);
+            List<CustomerDTO> resultList = new List<CustomerDTO>();
+
+            resultList.Add(result);
 
             if (result != null)
             {
@@ -225,12 +229,12 @@ namespace BackendRestApi.Controllers
                     respuesta.message = "Record not found.";
                     respuesta.data = null;
 
-                    return NotFound(respuesta);
+                    return Ok(respuesta);
                 }
 
                 respuesta.status = "204";
                 respuesta.message = "Data deleted successfully.";
-                respuesta.data = result;
+                respuesta.data = resultList;
 
                 return Ok(respuesta);
             }
@@ -239,7 +243,7 @@ namespace BackendRestApi.Controllers
             respuesta.message = "Changes not saved.";
             respuesta.data = null;
 
-            return NotFound(respuesta);
+            return Ok(respuesta);
         }
 
     }

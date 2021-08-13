@@ -14,7 +14,7 @@ namespace Backend.Repository.Sample.Services.Contracts
 
         public Task<CustomerDTO> GetDataById(long id);
 
-        public Task<long> AddAsync(CustomerDTO entity, string user);
+        public Task<CustomerDTO> AddAsync(CustomerDTO entity, string user);
 
         public Task<CustomerDTO> UpdateAsync(CustomerDTO entity, string user);
 
