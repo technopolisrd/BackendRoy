@@ -38,9 +38,9 @@ namespace BackendRestApi.Controllers
         }
 
         [HttpPost("refresh-token")]
-        public ActionResult<AuthenticateResponse> RefreshToken(RequestRefreshToken refTok)
+        public ActionResult<AuthenticateResponse> RefreshToken(RequestRefreshToken requestRefreshToken)
         {
-            var refreshToken = refTok.rToken; //Request.Cookies["refreshToken"];
+            var refreshToken = requestRefreshToken.rToken; //Request.Cookies["refreshToken"];
             var response = _accountService.RefreshToken(refreshToken, ipAddress());
             setTokenCookie(response.RefreshToken);
             return Ok(response);

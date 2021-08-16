@@ -1,5 +1,7 @@
-﻿using Backend.Entities.Tables.DTO;
+﻿using Backend.Entities.SecurityAccounts.Enums;
+using Backend.Entities.Tables.DTO;
 using Backend.Repository.Sample.Services.Contracts;
+using BackendRestApi.Helpers;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -10,7 +12,7 @@ namespace BackendRestApi.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class CustomerController : ControllerBase
+    public class CustomerController : BaseController
     {
 
         private iCustomerService serv;
@@ -20,10 +22,7 @@ namespace BackendRestApi.Controllers
             serv = _serv;
         }
 
-        /// <summary>
-        /// Get all customers
-        /// </summary>
-        /// <returns>List of customers</returns>
+        [Authorize(Role.User, Role.Admin)]
         [HttpGet]
         [ProducesResponseType(200, Type = typeof(ResponseDTO<List<CustomerDTO>>))]
         [Route("GetCustomers")]
@@ -49,6 +48,7 @@ namespace BackendRestApi.Controllers
             return Ok(respuesta);
         }
 
+        [Authorize(Role.Admin, Role.User)]
         [HttpGet("GetCustomersBySearch/{searchString}", Name = nameof(GetCustomersBySearch))]
         [ProducesResponseType(200, Type = typeof(ResponseDTO<List<CustomerDTO>>))]
         public async Task<IActionResult> GetCustomersBySearch(string searchString)
@@ -73,6 +73,7 @@ namespace BackendRestApi.Controllers
             return Ok(respuesta);
         }
 
+        [Authorize(Role.Admin, Role.User)]
         [HttpGet("GetCustomerById/{id}", Name = nameof(GetCustomerById))]
         [ProducesResponseType(200, Type = typeof(ResponseDTO<List<CustomerDTO>>))]
         public async Task<IActionResult> GetCustomerById(long id)
@@ -100,6 +101,7 @@ namespace BackendRestApi.Controllers
             return Ok(respuesta);
         }
 
+        [Authorize(Role.Admin, Role.User)]
         [HttpPost("CreateCustomer/{user}", Name = nameof(CreateCustomer))]
         [ProducesResponseType(201, Type = typeof(ResponseDTO<List<CustomerDTO>>))]
         public async Task<IActionResult> CreateCustomer([FromBody] CustomerDTO customer, string user)
@@ -146,6 +148,7 @@ namespace BackendRestApi.Controllers
 
         }
 
+        [Authorize(Role.Admin, Role.User)]
         [HttpPut("UpdateCustomer/{user}", Name = nameof(UpdateCustomer))]
         [ProducesResponseType(204, Type = typeof(ResponseDTO<List<CustomerDTO>>))]
         public async Task<IActionResult> UpdateCustomer([FromBody] CustomerDTO customer, string user)
@@ -201,6 +204,7 @@ namespace BackendRestApi.Controllers
 
         }
 
+        [Authorize(Role.Admin, Role.User)]
         [HttpDelete("DeleteCustomer/{id}", Name = nameof(DeleteCustomer))]
         [ProducesResponseType(204, Type = typeof(ResponseDTO<List<CustomerDTO>>))]
         public async Task<IActionResult> DeleteCustomer(long id, string user)
